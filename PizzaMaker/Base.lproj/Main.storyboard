@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10112" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="zZv-ra-kvP">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10083"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Pizza Maker-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="PizzaMaker" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,11 +16,630 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Selecciona el tamaño" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dhj-3U-f3p">
+                                <rect key="frame" x="214" y="171" width="173" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="173" id="KYR-57-jCP"/>
+                                    <constraint firstAttribute="height" constant="21" id="dWf-Yr-qnS"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-LightItalic" family="Helvetica Neue" pointSize="17"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ogl-gS-6iH">
+                                <rect key="frame" x="248" y="366" width="105" height="45"/>
+                                <color key="backgroundColor" red="0.91764705879999997" green="0.42745098040000001" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="RDS-Qd-0kM"/>
+                                    <constraint firstAttribute="width" constant="105" id="wWY-mh-mJl"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="15"/>
+                                <state key="normal" title="Grande">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="SetGrande:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1dt-09-MrW"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Tamano" translatesAutoresizingMaskIntoConstraints="NO" id="LL8-92-5NM">
+                                <rect key="frame" x="261" y="70" width="70" height="93"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="70" id="1fZ-1L-rrO"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G55-dY-XTN">
+                                <rect key="frame" x="248" y="313" width="105" height="45"/>
+                                <color key="backgroundColor" red="0.91764705879999997" green="0.42745098040000001" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="105" id="3nw-pw-kRf"/>
+                                    <constraint firstAttribute="height" constant="45" id="3rA-WK-NTi"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="15"/>
+                                <state key="normal" title="Mediana">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="setMediana:" destination="BYZ-38-t0r" eventType="touchUpInside" id="O4s-oD-M1k"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yQU-Nv-gKU">
+                                <rect key="frame" x="248" y="535" width="105" height="45"/>
+                                <color key="backgroundColor" red="0.91764705879999997" green="0.42745098040000001" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="105" id="9uA-56-Izg"/>
+                                    <constraint firstAttribute="height" constant="45" id="fyJ-iY-Rzm"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="15"/>
+                                <state key="normal" title="Siguiente">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="rgU-g4-hlb" kind="show" id="Kej-Rf-MO5"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IT0-2O-Eai">
+                                <rect key="frame" x="248" y="260" width="105" height="45"/>
+                                <color key="backgroundColor" red="0.91764705882352937" green="0.42745098039215684" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="Hjs-qG-gPl"/>
+                                    <constraint firstAttribute="width" constant="105" id="wWu-Q2-wZO"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="15"/>
+                                <state key="normal" title="Chica">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="setchica:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dbH-X7-Rrt"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.98039215686274506" green="0.77647058823529413" blue="0.15686274509803921" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="IT0-2O-Eai" firstAttribute="top" secondItem="dhj-3U-f3p" secondAttribute="bottom" constant="68" id="3RR-RS-crb"/>
+                            <constraint firstItem="dhj-3U-f3p" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="G7t-g5-c5E"/>
+                            <constraint firstItem="LL8-92-5NM" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="-4" id="NJg-3x-Z3E"/>
+                            <constraint firstItem="G55-dY-XTN" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="YcB-z7-O4p"/>
+                            <constraint firstItem="G55-dY-XTN" firstAttribute="leading" secondItem="IT0-2O-Eai" secondAttribute="trailing" constant="-105" id="bld-vQ-viZ"/>
+                            <constraint firstItem="G55-dY-XTN" firstAttribute="centerY" secondItem="IT0-2O-Eai" secondAttribute="centerY" constant="53" id="e1z-ow-rDd"/>
+                            <constraint firstItem="ogl-gS-6iH" firstAttribute="centerY" secondItem="IT0-2O-Eai" secondAttribute="centerY" constant="106" id="fw9-fw-S7L"/>
+                            <constraint firstItem="LL8-92-5NM" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="6" id="g2d-tS-pSH"/>
+                            <constraint firstAttribute="bottom" secondItem="yQU-Nv-gKU" secondAttribute="bottom" constant="20" symbolic="YES" id="gNH-SW-Tec"/>
+                            <constraint firstItem="ogl-gS-6iH" firstAttribute="leading" secondItem="G55-dY-XTN" secondAttribute="trailing" constant="-105" id="ph1-WH-wea"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="IT0-2O-Eai" secondAttribute="bottom" constant="295" id="rww-Zr-Upp"/>
+                            <constraint firstItem="dhj-3U-f3p" firstAttribute="top" secondItem="LL8-92-5NM" secondAttribute="bottom" constant="8" symbolic="YES" id="taZ-Jh-Beb"/>
+                            <constraint firstItem="yQU-Nv-gKU" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="yDs-rL-doZ"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Pizza Maker" id="2j1-Xf-DJc"/>
+                    <connections>
+                        <outlet property="chicoButton" destination="IT0-2O-Eai" id="FWg-hO-AVN"/>
+                        <outlet property="grandeButton" destination="ogl-gS-6iH" id="zRZ-kZ-ew4"/>
+                        <outlet property="medianButton" destination="G55-dY-XTN" id="OSY-yd-UMP"/>
+                        <outlet property="next1Button" destination="yQU-Nv-gKU" id="BQV-Fc-IaS"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="626" y="313"/>
+        </scene>
+        <!--Masa View Controller-->
+        <scene sceneID="WII-lI-Anh">
+            <objects>
+                <viewController id="rgU-g4-hlb" customClass="masaViewController" customModule="PizzaMaker" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="0S1-SP-PDi"/>
+                        <viewControllerLayoutGuide type="bottom" id="azR-d9-Tla"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="LDf-3n-sGC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Masa Grosor" translatesAutoresizingMaskIntoConstraints="NO" id="ndy-Zb-cLZ">
+                                <rect key="frame" x="265" y="72" width="70" height="70"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="70" id="AKU-eQ-rqA"/>
+                                    <constraint firstAttribute="height" constant="70" id="W5B-en-AXk"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Selecciona la Masa" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hw8-5q-iFD">
+                                <rect key="frame" x="214" y="150" width="173" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="173" id="EBx-wq-gA4"/>
+                                    <constraint firstAttribute="height" constant="21" id="Yac-MP-CW7"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-LightItalic" family="Helvetica Neue" pointSize="17"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OK1-8j-CYK">
+                                <rect key="frame" x="248" y="239" width="105" height="45"/>
+                                <color key="backgroundColor" red="0.91764705879999997" green="0.42745098040000001" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="Iad-oX-Gba"/>
+                                    <constraint firstAttribute="width" constant="105" id="Mwv-Yh-wRJ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="15"/>
+                                <state key="normal" title="Delgada">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="setDelgada:" destination="rgU-g4-hlb" eventType="touchUpInside" id="azH-9c-78b"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A3D-GY-ep4">
+                                <rect key="frame" x="248" y="292" width="105" height="45"/>
+                                <color key="backgroundColor" red="0.91764705879999997" green="0.42745098040000001" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="105" id="TQq-gO-aHm"/>
+                                    <constraint firstAttribute="height" constant="45" id="coV-FN-upg"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="15"/>
+                                <state key="normal" title="Crujiente">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="setCrujiente:" destination="rgU-g4-hlb" eventType="touchUpInside" id="Ls2-W8-HUz"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jOh-4X-yVi">
+                                <rect key="frame" x="248" y="345" width="105" height="45"/>
+                                <color key="backgroundColor" red="0.91764705879999997" green="0.42745098040000001" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="105" id="drw-ic-YwY"/>
+                                    <constraint firstAttribute="height" constant="45" id="p0G-Xa-jOH"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="15"/>
+                                <state key="normal" title="Gruesa">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="setGruesa:" destination="rgU-g4-hlb" eventType="touchUpInside" id="Xaq-6O-NdN"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fm5-1t-ypt">
+                                <rect key="frame" x="248" y="535" width="105" height="45"/>
+                                <color key="backgroundColor" red="0.91764705879999997" green="0.42745098040000001" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="BcI-Ln-Fe2"/>
+                                    <constraint firstAttribute="width" constant="105" id="NlH-ta-flq"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="15"/>
+                                <state key="normal" title="Siguiente">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="U8N-3W-tNo" kind="show" id="tvX-fY-gWN"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.98039215690000003" green="0.77647058820000003" blue="0.15686274510000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="jOh-4X-yVi" firstAttribute="top" secondItem="A3D-GY-ep4" secondAttribute="bottom" constant="8" symbolic="YES" id="38a-i1-TTf"/>
+                            <constraint firstItem="jOh-4X-yVi" firstAttribute="centerX" secondItem="LDf-3n-sGC" secondAttribute="centerX" id="BFY-3N-KLd"/>
+                            <constraint firstItem="ndy-Zb-cLZ" firstAttribute="centerX" secondItem="LDf-3n-sGC" secondAttribute="centerX" id="GI5-8C-x2Q"/>
+                            <constraint firstItem="OK1-8j-CYK" firstAttribute="centerX" secondItem="LDf-3n-sGC" secondAttribute="centerX" id="Nph-LE-jOa"/>
+                            <constraint firstItem="Hw8-5q-iFD" firstAttribute="top" secondItem="ndy-Zb-cLZ" secondAttribute="bottom" constant="8" symbolic="YES" id="PrN-Yp-6gy"/>
+                            <constraint firstItem="Fm5-1t-ypt" firstAttribute="centerX" secondItem="LDf-3n-sGC" secondAttribute="centerX" id="S9q-eq-jqw"/>
+                            <constraint firstAttribute="bottom" secondItem="Fm5-1t-ypt" secondAttribute="bottom" constant="20" symbolic="YES" id="ahM-rh-7m1"/>
+                            <constraint firstItem="OK1-8j-CYK" firstAttribute="top" secondItem="Hw8-5q-iFD" secondAttribute="bottom" constant="68" id="bJN-Ig-zYl"/>
+                            <constraint firstItem="A3D-GY-ep4" firstAttribute="top" secondItem="OK1-8j-CYK" secondAttribute="bottom" constant="8" symbolic="YES" id="ixq-qc-mtd"/>
+                            <constraint firstItem="ndy-Zb-cLZ" firstAttribute="top" secondItem="0S1-SP-PDi" secondAttribute="bottom" constant="8" symbolic="YES" id="nMh-0Y-6A9"/>
+                            <constraint firstItem="Hw8-5q-iFD" firstAttribute="centerX" secondItem="LDf-3n-sGC" secondAttribute="centerX" id="qek-dc-F7E"/>
+                            <constraint firstItem="A3D-GY-ep4" firstAttribute="centerX" secondItem="LDf-3n-sGC" secondAttribute="centerX" id="rPQ-kB-lRD"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="crujienteButton" destination="A3D-GY-ep4" id="EI5-QT-jaz"/>
+                        <outlet property="delgadaButton" destination="OK1-8j-CYK" id="lU7-WQ-5wr"/>
+                        <outlet property="gruesaButton" destination="jOh-4X-yVi" id="QBd-9f-LBO"/>
+                        <outlet property="next2Button" destination="Fm5-1t-ypt" id="eeA-hR-S6h"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Mlu-Zs-F8a" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1360" y="313"/>
+        </scene>
+        <!--Queso View Controller-->
+        <scene sceneID="yxH-PX-aLq">
+            <objects>
+                <viewController id="U8N-3W-tNo" customClass="quesoViewController" customModule="PizzaMaker" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ITo-0k-LA5"/>
+                        <viewControllerLayoutGuide type="bottom" id="KOn-E1-gcb"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="lRj-Vl-w0E">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Queso" translatesAutoresizingMaskIntoConstraints="NO" id="0PG-XB-0Dz">
+                                <rect key="frame" x="265" y="72" width="70" height="70"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="70" id="XGk-KO-HBe"/>
+                                    <constraint firstAttribute="width" constant="70" id="t10-Wd-V01"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Selecciona el Queso" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bna-xv-Xdz">
+                                <rect key="frame" x="214" y="150" width="173" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="173" id="iYX-jD-JAR"/>
+                                    <constraint firstAttribute="height" constant="21" id="zfk-s1-Vyo"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-LightItalic" family="Helvetica Neue" pointSize="17"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uRA-Ke-NdM">
+                                <rect key="frame" x="248" y="227" width="105" height="45"/>
+                                <color key="backgroundColor" red="0.91764705879999997" green="0.42745098040000001" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="105" id="1sg-0e-B3k"/>
+                                    <constraint firstAttribute="height" constant="45" id="sWc-d9-a5B"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="15"/>
+                                <state key="normal" title="Mozarella">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="mozSelect:" destination="U8N-3W-tNo" eventType="touchUpInside" id="wov-TH-cIA"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Pt-va-rdz">
+                                <rect key="frame" x="248" y="333" width="105" height="45"/>
+                                <color key="backgroundColor" red="0.91764705879999997" green="0.42745098040000001" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="105" id="3U4-CZ-PwK"/>
+                                    <constraint firstAttribute="height" constant="45" id="Rm3-Gt-hJa"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="15"/>
+                                <state key="normal" title="Parmesano">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="parmSelect:" destination="U8N-3W-tNo" eventType="touchUpInside" id="1y5-Pi-d60"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hTW-bH-23q">
+                                <rect key="frame" x="248" y="280" width="105" height="45"/>
+                                <color key="backgroundColor" red="0.91764705879999997" green="0.42745098040000001" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="105" id="RU9-6V-pGh"/>
+                                    <constraint firstAttribute="height" constant="45" id="TKO-RF-VC2"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="15"/>
+                                <state key="normal" title="Cheddar">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="chedSelect:" destination="U8N-3W-tNo" eventType="touchUpInside" id="1XS-YS-5YX"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LLv-5e-7Uo">
+                                <rect key="frame" x="248" y="386" width="105" height="45"/>
+                                <color key="backgroundColor" red="0.91764705879999997" green="0.42745098040000001" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="6os-0U-b54"/>
+                                    <constraint firstAttribute="width" constant="105" id="GtN-P5-h8R"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="15"/>
+                                <state key="normal" title="Sin Queso">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="noSelect:" destination="U8N-3W-tNo" eventType="touchUpInside" id="6hY-hL-Efw"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1eZ-Ye-0j0">
+                                <rect key="frame" x="248" y="535" width="105" height="45"/>
+                                <color key="backgroundColor" red="0.91764705879999997" green="0.42745098040000001" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="qmc-pB-tKD"/>
+                                    <constraint firstAttribute="width" constant="105" id="xru-XG-mFe"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="15"/>
+                                <state key="normal" title="Siguiente">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="5nk-Wu-Fuv" kind="show" id="mSa-95-uca"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.98039215690000003" green="0.77647058820000003" blue="0.15686274510000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="0PG-XB-0Dz" firstAttribute="top" secondItem="ITo-0k-LA5" secondAttribute="bottom" constant="8" symbolic="YES" id="5ad-Ti-Sw1"/>
+                            <constraint firstItem="Bna-xv-Xdz" firstAttribute="centerX" secondItem="lRj-Vl-w0E" secondAttribute="centerX" id="J1J-gM-1Nb"/>
+                            <constraint firstItem="LLv-5e-7Uo" firstAttribute="top" secondItem="8Pt-va-rdz" secondAttribute="bottom" constant="8" symbolic="YES" id="Tap-ER-OKx"/>
+                            <constraint firstItem="uRA-Ke-NdM" firstAttribute="top" secondItem="Bna-xv-Xdz" secondAttribute="bottom" constant="56" id="UFd-gg-VxS"/>
+                            <constraint firstItem="0PG-XB-0Dz" firstAttribute="centerX" secondItem="lRj-Vl-w0E" secondAttribute="centerX" id="Wsk-5H-LmC"/>
+                            <constraint firstItem="8Pt-va-rdz" firstAttribute="centerX" secondItem="lRj-Vl-w0E" secondAttribute="centerX" id="Z6L-2X-LD8"/>
+                            <constraint firstItem="Bna-xv-Xdz" firstAttribute="top" secondItem="0PG-XB-0Dz" secondAttribute="bottom" constant="8" symbolic="YES" id="ZV8-Gh-c4v"/>
+                            <constraint firstItem="1eZ-Ye-0j0" firstAttribute="centerX" secondItem="lRj-Vl-w0E" secondAttribute="centerX" id="dX3-HN-Pey"/>
+                            <constraint firstItem="hTW-bH-23q" firstAttribute="centerX" secondItem="lRj-Vl-w0E" secondAttribute="centerX" id="ilT-98-DEL"/>
+                            <constraint firstItem="8Pt-va-rdz" firstAttribute="top" secondItem="hTW-bH-23q" secondAttribute="bottom" constant="8" symbolic="YES" id="mfu-vZ-Caa"/>
+                            <constraint firstItem="LLv-5e-7Uo" firstAttribute="centerX" secondItem="lRj-Vl-w0E" secondAttribute="centerX" id="reG-zR-Rbu"/>
+                            <constraint firstItem="uRA-Ke-NdM" firstAttribute="centerX" secondItem="lRj-Vl-w0E" secondAttribute="centerX" id="scu-Bg-tqa"/>
+                            <constraint firstAttribute="bottom" secondItem="1eZ-Ye-0j0" secondAttribute="bottom" constant="20" symbolic="YES" id="zU6-k5-0Hn"/>
+                            <constraint firstItem="hTW-bH-23q" firstAttribute="top" secondItem="uRA-Ke-NdM" secondAttribute="bottom" constant="8" symbolic="YES" id="zk1-kh-e4E"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="chedButton" destination="hTW-bH-23q" id="1TC-YJ-HTx"/>
+                        <outlet property="mozButton" destination="uRA-Ke-NdM" id="eSS-oy-7LL"/>
+                        <outlet property="next3Button" destination="1eZ-Ye-0j0" id="uSV-Bp-F12"/>
+                        <outlet property="noButton" destination="LLv-5e-7Uo" id="7dc-Zz-0eU"/>
+                        <outlet property="parmButton" destination="8Pt-va-rdz" id="lbm-LW-uOo"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xhL-Bw-S3k" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2220" y="313"/>
+        </scene>
+        <!--Ingredientes View Controller-->
+        <scene sceneID="iaq-4j-tEf">
+            <objects>
+                <viewController id="5nk-Wu-Fuv" customClass="ingredientesViewController" customModule="PizzaMaker" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Vhh-gz-cFn"/>
+                        <viewControllerLayoutGuide type="bottom" id="X11-c0-HGH"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="FIW-aS-kG3">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Ingredientes" translatesAutoresizingMaskIntoConstraints="NO" id="FL7-nz-hjn">
+                                <rect key="frame" x="265" y="72" width="70" height="70"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="70" id="Mg3-Eq-zFR"/>
+                                    <constraint firstAttribute="height" constant="70" id="ftm-8M-Dne"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Selecciona los Ingredientes (max. 5)" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mfa-dJ-bCo">
+                                <rect key="frame" x="201" y="150" width="201" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="nXB-oi-MfS"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-LightItalic" family="Helvetica Neue" pointSize="13"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XAs-Js-mdg">
+                                <rect key="frame" x="249" y="535" width="105" height="45"/>
+                                <color key="backgroundColor" red="0.91764705879999997" green="0.42745098040000001" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="105" id="6Ts-s2-fxk"/>
+                                    <constraint firstAttribute="height" constant="45" id="CnY-zP-U15"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="15"/>
+                                <state key="normal" title="Siguiente">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="xFn-CJ-hsz" kind="show" id="zoS-rB-fMp"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sci-wf-lTU">
+                                <rect key="frame" x="249" y="217" width="105" height="27"/>
+                                <color key="backgroundColor" red="0.91764705879999997" green="0.42745098040000001" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="27" id="5i6-jl-xeu"/>
+                                    <constraint firstAttribute="width" constant="105" id="p0W-YV-aIH"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="15"/>
+                                <state key="normal" title="Jamón">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="jamSelect:" destination="5nk-Wu-Fuv" eventType="touchUpInside" id="PzN-qU-9rS"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8e5-QW-bK4">
+                                <rect key="frame" x="249" y="252" width="105" height="27"/>
+                                <color key="backgroundColor" red="0.91764705879999997" green="0.42745098040000001" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="27" id="FuZ-9g-BnF"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="15"/>
+                                <state key="normal" title="Champiñon">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="champSelect:" destination="5nk-Wu-Fuv" eventType="touchUpInside" id="Th4-V9-3VV"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Ql-GN-1zc">
+                                <rect key="frame" x="249" y="357" width="105" height="27"/>
+                                <color key="backgroundColor" red="0.91764705879999997" green="0.42745098040000001" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="27" id="L6H-gO-4Un"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="15"/>
+                                <state key="normal" title="Pimiento">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="pimieSelect:" destination="5nk-Wu-Fuv" eventType="touchUpInside" id="sNV-3D-YOC"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l0e-Pb-QbZ">
+                                <rect key="frame" x="249" y="287" width="105" height="27"/>
+                                <color key="backgroundColor" red="0.91764705879999997" green="0.42745098040000001" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="27" id="9pF-J0-qfr"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="15"/>
+                                <state key="normal" title="Piña">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="pinaSelect:" destination="5nk-Wu-Fuv" eventType="touchUpInside" id="eq5-Ym-3Kg"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gIQ-ZB-n6x">
+                                <rect key="frame" x="249" y="392" width="105" height="27"/>
+                                <color key="backgroundColor" red="0.91764705879999997" green="0.42745098040000001" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="15"/>
+                                <state key="normal" title="Aceituna">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="aceitSelect:" destination="5nk-Wu-Fuv" eventType="touchUpInside" id="Wqz-sG-8gS"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lSI-SB-gRw">
+                                <rect key="frame" x="249" y="322" width="105" height="27"/>
+                                <color key="backgroundColor" red="0.91764705879999997" green="0.42745098040000001" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="27" id="JeV-Tl-O01"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="15"/>
+                                <state key="normal" title="Pepperoni">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="peppeSelect:" destination="5nk-Wu-Fuv" eventType="touchUpInside" id="8rG-yB-1rK"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.98039215690000003" green="0.77647058820000003" blue="0.15686274510000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="gIQ-ZB-n6x" firstAttribute="centerX" secondItem="FIW-aS-kG3" secondAttribute="centerX" constant="1.5" id="1Al-hM-NPR"/>
+                            <constraint firstItem="l0e-Pb-QbZ" firstAttribute="centerX" secondItem="FIW-aS-kG3" secondAttribute="centerX" constant="1.5" id="2eq-Vx-YrI"/>
+                            <constraint firstAttribute="bottom" secondItem="XAs-Js-mdg" secondAttribute="bottom" constant="20" id="3Dq-Sk-p0F"/>
+                            <constraint firstItem="sci-wf-lTU" firstAttribute="leading" secondItem="8e5-QW-bK4" secondAttribute="leading" id="F54-PM-xHb"/>
+                            <constraint firstItem="Mfa-dJ-bCo" firstAttribute="top" secondItem="FL7-nz-hjn" secondAttribute="bottom" constant="8" symbolic="YES" id="Jyd-a4-97g"/>
+                            <constraint firstItem="9Ql-GN-1zc" firstAttribute="leading" secondItem="gIQ-ZB-n6x" secondAttribute="leading" id="KXb-Yi-kxp"/>
+                            <constraint firstItem="lSI-SB-gRw" firstAttribute="leading" secondItem="9Ql-GN-1zc" secondAttribute="leading" id="LRo-qq-2FG"/>
+                            <constraint firstItem="FL7-nz-hjn" firstAttribute="centerX" secondItem="FIW-aS-kG3" secondAttribute="centerX" id="LXV-yc-rLo"/>
+                            <constraint firstItem="9Ql-GN-1zc" firstAttribute="top" secondItem="lSI-SB-gRw" secondAttribute="bottom" constant="8" symbolic="YES" id="Nkm-5C-V8p"/>
+                            <constraint firstItem="Mfa-dJ-bCo" firstAttribute="centerX" secondItem="XAs-Js-mdg" secondAttribute="centerX" id="OwE-vX-LQa"/>
+                            <constraint firstItem="sci-wf-lTU" firstAttribute="top" secondItem="Mfa-dJ-bCo" secondAttribute="bottom" constant="46" id="PXi-vX-CiD"/>
+                            <constraint firstItem="9Ql-GN-1zc" firstAttribute="centerX" secondItem="FIW-aS-kG3" secondAttribute="centerX" constant="1.5" id="UVy-9h-dCb"/>
+                            <constraint firstItem="l0e-Pb-QbZ" firstAttribute="leading" secondItem="lSI-SB-gRw" secondAttribute="leading" id="Ycz-ng-dG9"/>
+                            <constraint firstItem="gIQ-ZB-n6x" firstAttribute="top" secondItem="9Ql-GN-1zc" secondAttribute="bottom" constant="8" symbolic="YES" id="dds-ms-Fi3"/>
+                            <constraint firstItem="8e5-QW-bK4" firstAttribute="centerX" secondItem="FIW-aS-kG3" secondAttribute="centerX" constant="1.5" id="dhN-S6-LUL"/>
+                            <constraint firstItem="sci-wf-lTU" firstAttribute="centerX" secondItem="FIW-aS-kG3" secondAttribute="centerX" constant="1.5" id="dnB-8f-ZnW"/>
+                            <constraint firstItem="l0e-Pb-QbZ" firstAttribute="top" secondItem="8e5-QW-bK4" secondAttribute="bottom" constant="8" symbolic="YES" id="eKq-z8-ojZ"/>
+                            <constraint firstItem="FL7-nz-hjn" firstAttribute="top" secondItem="Vhh-gz-cFn" secondAttribute="bottom" constant="8" symbolic="YES" id="eU3-Hd-l3s"/>
+                            <constraint firstItem="lSI-SB-gRw" firstAttribute="top" secondItem="l0e-Pb-QbZ" secondAttribute="bottom" constant="8" symbolic="YES" id="fNy-Qy-EVB"/>
+                            <constraint firstItem="8e5-QW-bK4" firstAttribute="leading" secondItem="l0e-Pb-QbZ" secondAttribute="leading" id="kJf-fY-Fu1"/>
+                            <constraint firstItem="8e5-QW-bK4" firstAttribute="top" secondItem="sci-wf-lTU" secondAttribute="bottom" constant="8" symbolic="YES" id="qOI-UO-Stn"/>
+                            <constraint firstItem="XAs-Js-mdg" firstAttribute="centerX" secondItem="FIW-aS-kG3" secondAttribute="centerX" constant="1.5" id="sTG-6D-fBz"/>
+                            <constraint firstItem="lSI-SB-gRw" firstAttribute="centerX" secondItem="FIW-aS-kG3" secondAttribute="centerX" constant="1.5" id="yuo-EE-idA"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="aceitButton" destination="gIQ-ZB-n6x" id="9kz-pd-iYe"/>
+                        <outlet property="champButton" destination="8e5-QW-bK4" id="lQj-19-ao2"/>
+                        <outlet property="jamonButton" destination="sci-wf-lTU" id="evV-L8-NZx"/>
+                        <outlet property="next4Button" destination="XAs-Js-mdg" id="sYU-Nn-ZbP"/>
+                        <outlet property="peppeButton" destination="lSI-SB-gRw" id="jLx-uM-9e9"/>
+                        <outlet property="pimieButton" destination="9Ql-GN-1zc" id="BMb-5y-8sQ"/>
+                        <outlet property="pinaButton" destination="l0e-Pb-QbZ" id="plb-es-nht"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iqg-qv-kDr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3020" y="313"/>
+        </scene>
+        <!--Resumen View Controller-->
+        <scene sceneID="tZg-8t-9ek">
+            <objects>
+                <viewController id="xFn-CJ-hsz" customClass="resumenViewController" customModule="PizzaMaker" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="EIo-Ty-cdK"/>
+                        <viewControllerLayoutGuide type="bottom" id="ccd-X1-HJ6"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="NFz-Ra-2HQ">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="stone-oven" translatesAutoresizingMaskIntoConstraints="NO" id="J7x-T8-IXi">
+                                <rect key="frame" x="264" y="72" width="70" height="70"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="70" id="Haz-ZS-4sg"/>
+                                    <constraint firstAttribute="width" constant="70" id="sks-bs-ZLB"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Revisa tu pedido" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r1W-hu-mT0">
+                                <rect key="frame" x="200" y="150" width="200" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="uN4-Pq-Coy"/>
+                                    <constraint firstAttribute="height" constant="21" id="vEr-6I-Z3V"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-LightItalic" family="Helvetica Neue" pointSize="15"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OMB-LO-gtE">
+                                <rect key="frame" x="279" y="219" width="42" height="52"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="15"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K7H-lN-m7Q">
+                                <rect key="frame" x="279" y="279" width="42" height="52"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="15"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P3D-ln-swk">
+                                <rect key="frame" x="279" y="339" width="42" height="48"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="15"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gBX-Gb-Pqm">
+                                <rect key="frame" x="279" y="395" width="42" height="130"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="15"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.98039215690000003" green="0.77647058820000003" blue="0.15686274510000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="OMB-LO-gtE" firstAttribute="centerX" secondItem="NFz-Ra-2HQ" secondAttribute="centerX" id="9jb-qb-MXs"/>
+                            <constraint firstItem="K7H-lN-m7Q" firstAttribute="top" secondItem="OMB-LO-gtE" secondAttribute="bottom" constant="8" id="Bd3-ol-0Zf"/>
+                            <constraint firstItem="J7x-T8-IXi" firstAttribute="top" secondItem="EIo-Ty-cdK" secondAttribute="bottom" constant="8" symbolic="YES" id="Kva-XH-xHH"/>
+                            <constraint firstItem="gBX-Gb-Pqm" firstAttribute="centerX" secondItem="NFz-Ra-2HQ" secondAttribute="centerX" id="Tt8-9K-Kr1"/>
+                            <constraint firstItem="r1W-hu-mT0" firstAttribute="top" secondItem="J7x-T8-IXi" secondAttribute="bottom" constant="8" symbolic="YES" id="WNB-zV-jla"/>
+                            <constraint firstItem="P3D-ln-swk" firstAttribute="top" secondItem="K7H-lN-m7Q" secondAttribute="bottom" constant="8" id="baG-uc-Zge"/>
+                            <constraint firstItem="P3D-ln-swk" firstAttribute="centerX" secondItem="NFz-Ra-2HQ" secondAttribute="centerX" id="cls-Rr-eXc"/>
+                            <constraint firstItem="OMB-LO-gtE" firstAttribute="top" secondItem="r1W-hu-mT0" secondAttribute="bottom" constant="48" id="dZL-MM-f1S"/>
+                            <constraint firstItem="K7H-lN-m7Q" firstAttribute="centerX" secondItem="NFz-Ra-2HQ" secondAttribute="centerX" id="irM-AQ-qMl"/>
+                            <constraint firstItem="J7x-T8-IXi" firstAttribute="centerX" secondItem="NFz-Ra-2HQ" secondAttribute="centerX" id="k9C-0s-pas"/>
+                            <constraint firstItem="r1W-hu-mT0" firstAttribute="centerX" secondItem="NFz-Ra-2HQ" secondAttribute="centerX" id="zh1-o9-7bd"/>
+                            <constraint firstItem="gBX-Gb-Pqm" firstAttribute="top" secondItem="P3D-ln-swk" secondAttribute="bottom" constant="8" id="zks-iM-S85"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="ingredientesLabel" destination="gBX-Gb-Pqm" id="cHO-5y-aCz"/>
+                        <outlet property="masaLabel" destination="K7H-lN-m7Q" id="TbC-Nr-W31"/>
+                        <outlet property="quesoLabel" destination="P3D-ln-swk" id="S8F-Sl-yhR"/>
+                        <outlet property="tamanoLabel" destination="OMB-LO-gtE" id="HH7-nb-gMJ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="A1c-vr-XVy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3762" y="313"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="adU-0F-fcB">
+            <objects>
+                <navigationController id="zZv-ra-kvP" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="mRY-zv-ame">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="bzA-ab-KhE"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IN0-ac-Rnq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-128" y="313"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Ingredientes" width="128" height="128"/>
+        <image name="Masa Grosor" width="128" height="128"/>
+        <image name="Queso" width="128" height="128"/>
+        <image name="Tamano" width="128" height="128"/>
+        <image name="stone-oven" width="128" height="128"/>
+    </resources>
 </document>

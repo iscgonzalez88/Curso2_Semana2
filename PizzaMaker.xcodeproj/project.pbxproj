@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A053C1381C8C06E300B86EEF /* quesoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A053C1371C8C06E300B86EEF /* quesoViewController.swift */; };
+		A053C13A1C8C073700B86EEF /* masaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A053C1391C8C073700B86EEF /* masaViewController.swift */; };
+		A053C13C1C8C076B00B86EEF /* ingredientesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A053C13B1C8C076B00B86EEF /* ingredientesViewController.swift */; };
+		A053C13E1C8C079100B86EEF /* resumenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A053C13D1C8C079100B86EEF /* resumenViewController.swift */; };
 		A06C12E01C893D2E003DDED3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A06C12DF1C893D2E003DDED3 /* AppDelegate.swift */; };
 		A06C12E21C893D2E003DDED3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A06C12E11C893D2E003DDED3 /* ViewController.swift */; };
 		A06C12E51C893D2E003DDED3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A06C12E31C893D2E003DDED3 /* Main.storyboard */; };
@@ -15,6 +19,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A053C1371C8C06E300B86EEF /* quesoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = quesoViewController.swift; sourceTree = "<group>"; };
+		A053C1391C8C073700B86EEF /* masaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = masaViewController.swift; sourceTree = "<group>"; };
+		A053C13B1C8C076B00B86EEF /* ingredientesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ingredientesViewController.swift; sourceTree = "<group>"; };
+		A053C13D1C8C079100B86EEF /* resumenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = resumenViewController.swift; sourceTree = "<group>"; };
 		A06C12DC1C893D2D003DDED3 /* PizzaMaker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PizzaMaker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A06C12DF1C893D2E003DDED3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A06C12E11C893D2E003DDED3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -60,6 +68,10 @@
 				A06C12E61C893D2E003DDED3 /* Assets.xcassets */,
 				A06C12E81C893D2E003DDED3 /* LaunchScreen.storyboard */,
 				A06C12EB1C893D2E003DDED3 /* Info.plist */,
+				A053C1371C8C06E300B86EEF /* quesoViewController.swift */,
+				A053C1391C8C073700B86EEF /* masaViewController.swift */,
+				A053C13B1C8C076B00B86EEF /* ingredientesViewController.swift */,
+				A053C13D1C8C079100B86EEF /* resumenViewController.swift */,
 			);
 			path = PizzaMaker;
 			sourceTree = "<group>";
@@ -136,8 +148,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A053C13E1C8C079100B86EEF /* resumenViewController.swift in Sources */,
+				A053C13A1C8C073700B86EEF /* masaViewController.swift in Sources */,
+				A053C1381C8C06E300B86EEF /* quesoViewController.swift in Sources */,
 				A06C12E21C893D2E003DDED3 /* ViewController.swift in Sources */,
 				A06C12E01C893D2E003DDED3 /* AppDelegate.swift in Sources */,
+				A053C13C1C8C076B00B86EEF /* ingredientesViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -253,9 +269,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = PizzaMaker/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.eLab.PizzaMaker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -264,9 +282,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = PizzaMaker/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.eLab.PizzaMaker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
@@ -289,6 +309,7 @@
 				A06C12F01C893D2E003DDED3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
